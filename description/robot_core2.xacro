@@ -52,6 +52,10 @@
             <origin xyz="0 0 0.07" rpy="0.0 0.0 0.0"/>
         </xacro:inertial_box>
     </link>
+
+    <gazebo reference="chassis">
+        <material>Gazebo/GreyTransparent</material>
+    </gazebo>
    
     <!-- LEFT FRONT WHEEL LINK -->
 
@@ -79,13 +83,19 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="left_front_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="1"></mu1>
+        <mu2 value="0.8"></mu2>
+    </gazebo>
+
     <!-- LEFT REAR WHEEL LINK -->
 
     <joint name="left_rear_wheel_joint" type="continuous">
         <parent link="chassis"/>
         <child link="left_rear_wheel"/>
         <origin xyz="-0.14 0.1175 -0.02" rpy="-${pi/2} 0 0" />
-        <axis xyz="0 0 -1"/>
+        <axis xyz="0 0 1"/>
     </joint>
 
     <link name="left_rear_wheel">
@@ -104,6 +114,12 @@
             <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
         </xacro:inertial_cylinder>
     </link>
+
+    <gazebo reference="left_rear_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="1"></mu1>
+        <mu2 value="0.8"></mu2>
+    </gazebo>
    
     <!-- RIGHT FRONT WHEEL LINK -->
 
@@ -112,7 +128,7 @@
         <child link="right_front_wheel"/>
         <origin xyz="0.14 -0.1175 -0.02" rpy="
         ${pi/2} 0 0" />
-        <axis xyz="0 0 1"/>
+        <axis xyz="0 0 -1"/>
     </joint>
 
     <link name="right_front_wheel">
@@ -131,6 +147,12 @@
             <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
         </xacro:inertial_cylinder>
     </link>
+
+    <gazebo reference="right_front_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="1"></mu1>
+        <mu2 value="0.8"></mu2>
+    </gazebo>
 
     <!-- RIGHT REAR WHEEL LINK -->
 
@@ -157,4 +179,11 @@
             <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
         </xacro:inertial_cylinder>
     </link>
+
+    <gazebo reference="right_rear_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="1"></mu1>
+        <mu2 value="0.8"></mu2>
+    </gazebo>
+
 </robot>
