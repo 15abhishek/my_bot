@@ -19,12 +19,14 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 
-add_executable(listener scripts/odom_sub.cpp)
-ament_target_dependencies(listener rclcpp std_msgs)
+# add_executable(listener scripts/odom_sub.cpp)
+# ament_target_dependencies(listener rclcpp std_msgs)
+# ament_target_dependencies(listener rclcpp nav_msgs)
 
 install(TARGETS
-  listener
+  # listener
   DESTINATION lib/${PROJECT_NAME})
 # uncomment the following section in order to fill in
 # further dependencies manually.
